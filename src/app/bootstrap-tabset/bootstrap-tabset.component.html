@@ -1,0 +1,78 @@
+<div class="container" style="padding-top: 50px;">
+  <ngb-tabset type="pills" [orientation]="currentOrientation">
+    <ngb-tab title="HTML-5 Section-1">
+      <ng-template ngbTabContent>
+        <div class="container" style="padding-top: 10px;">
+          <h2>HTML-5-New-Tag</h2>
+          <article>
+            <h4>Article-Tag</h4>
+            <p>Defines an article in a document</p>
+          </article>
+          <aside>
+            <h4>Aside-Tag</h4>
+            <p>Defines content aside from the page content</p>
+          </aside>
+          <h4>Details-Tag</h4>
+          <details>
+            <summary>Details-Tag</summary>
+            <p>Defines additional details that the user can view or hide</p>
+          </details>
+          <div>
+            <h4>Dialog-Tag</h4>
+            <p>dialog tag defines a dialog box or window.</p>
+            <dialog open>This is an open dialog window</dialog>
+          </div>
+          <div>
+            <h4>Figure and figcaption Tag</h4>
+            <p>figure element to mark up a photo in a document.<p>
+                <p>The figcaption tag defines a caption for a figure element.</p>
+                <figure>
+                  <img src="../assets/pic_trulli.jpg" alt="Trulli" style="width:20%">
+                  <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+                </figure>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>HTML-5 Section-2</ng-template>
+      <ng-template ngbTabContent>
+        <div class="container" style="padding-top: 10px;">
+          <header>
+            <h4>Header-Tag</h4>
+            <p>The header element represents a container for introductory content or a set of navigational links.</p>
+          </header>
+          <footer>
+            <h4>Footer-Tag</h4>
+            <p>The footer tag defines a footer for a document or section.</p>
+          </footer>
+          <h4>Main-Tag</h4>
+          <main>main tag specifies the main content of a document.</main>
+          <div>
+            <h4>Canvas-Tag</h4>
+            <p>The HTML canvas element is used to draw graphics on a web page.</p>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+            </canvas>
+          </div>
+        </div>
+
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Few Questions" [disabled]="false">
+      <ng-template ngbTabContent>
+        <div class="container" style="padding-top: 10px;">
+
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+
+  <div style="padding-top:10px" class="btn-group btn-group-toggle" ngbRadioGroup [(ngModel)]="currentOrientation">
+    <label ngbButtonLabel class="btn-outline-primary btn-sm">
+      <input ngbButton type="radio" value="horizontal">Horizontal
+    </label>
+    <label ngbButtonLabel class="btn-outline-primary btn-sm">
+      <input ngbButton type="radio" value="vertical">Vertical
+    </label>
+  </div>
+</div>
