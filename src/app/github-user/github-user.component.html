@@ -1,0 +1,32 @@
+<div class="container" style="padding-top: 50px">
+  <div class="form-group">
+    <input #input (keyup)="onSearch(input.value)" type="text" placeholder="Search users..." class="form-control">
+  </div>
+  <div class="row">
+    <div *ngFor="let user of users">
+      <div class="col-md-12">
+        <div class="thumbnail">
+          <img [src]="user.avatar_url" style="width: 200px;">
+        </div>
+        <div class="caption py-3" style="color:blue;">
+          <details>
+            <summary>{{user.login | uppercase}}</summary>
+            <div>
+              <label>User Id: </label>
+              <span>{{user.id}}</span>
+            </div>
+            <div>
+              <label>URL:</label>
+              <span> {{user.url}}</span>
+            </div>
+            <div>
+              <label>Admin:</label>
+              <span *ngIf="user.site_admin == true">Yes</span>
+              <span *ngIf="user.site_admin == false">No</span>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

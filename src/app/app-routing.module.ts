@@ -5,6 +5,7 @@ import { BootstrapModalComponent } from './bootstrap-modal/bootstrap-modal.compo
 import { BootstrapPopoverComponent } from './bootstrap-popover/bootstrap-popover.component';
 import { BootstrapTabsetComponent } from './bootstrap-tabset/bootstrap-tabset.component';
 import { HomeComponent } from './home/home.component';
+import { GithubUserComponent } from './github-user/github-user.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'tabset',
     component: BootstrapTabsetComponent
+  },
+  {
+    path: 'github',
+    component: GithubUserComponent
   }
 ];
 

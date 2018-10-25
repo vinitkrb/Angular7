@@ -11,6 +11,10 @@ import { BootstrapPopoverComponent } from './bootstrap-popover/bootstrap-popover
 import { BootstrapTabsetComponent } from './bootstrap-tabset/bootstrap-tabset.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { GithubUserComponent } from './github-user/github-user.component';
+import { HttpModule } from '@angular/http';
+import { ApiService } from './services/api.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -19,16 +23,18 @@ import { HomeComponent } from './home/home.component';
     BootstrapModalComponent,
     BootstrapPopoverComponent,
     BootstrapTabsetComponent,
-    HomeComponent
+    HomeComponent,
+    GithubUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ApiService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
