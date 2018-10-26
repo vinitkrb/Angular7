@@ -15,6 +15,7 @@ import { GithubUserComponent } from './github-user/github-user.component';
 import { HttpModule } from '@angular/http';
 import { ApiService } from './services/api.service';
 import { UserService } from './services/user.service';
+import { BootstrapTypeaheadComponent } from './bootstrap-typeahead/bootstrap-typeahead.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserService } from './services/user.service';
     BootstrapPopoverComponent,
     BootstrapTabsetComponent,
     HomeComponent,
-    GithubUserComponent
+    GithubUserComponent,
+    BootstrapTypeaheadComponent
   ],
   imports: [
     BrowserModule,

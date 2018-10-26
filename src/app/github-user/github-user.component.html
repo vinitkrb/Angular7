@@ -11,18 +11,46 @@
         <div class="caption py-3" style="color:blue;">
           <details>
             <summary>{{user.login | uppercase}}</summary>
-            <div>
-              <label>User Id: </label>
+            <div style="color:rebeccapurple;">
+              <label style="font-style:oblique;"><b>User Id: </b></label>
               <span>{{user.id}}</span>
             </div>
-            <div>
-              <label>URL:</label>
+            <div style="color:rebeccapurple;">
+              <label style="font-style:oblique;"><b>URL:</b></label>
               <span> {{user.url}}</span>
             </div>
-            <div>
-              <label>Admin:</label>
+            <div style="color:rebeccapurple;">
+              <label style="font-style:oblique;"><b>Admin:</b></label>
               <span *ngIf="user.site_admin == true">Yes</span>
               <span *ngIf="user.site_admin == false">No</span>
+            </div>
+            <div>
+              <label (click)="viewUser(user)" style="font-style:oblique;cursor:pointer">My Followers</label>
+            </div>
+            <div *ngFor="let follower of selectedUser.followers">
+              <div class="col-md-12">
+                <div class="thumbnail">
+                  <img [src]="follower.avatar_url" style="width: 200px;">
+                </div>
+                <div class="caption py-3" style="color:blue;">
+                  <details>
+                    <summary (click)="viewUser(user)">{{follower.login | uppercase}}</summary>
+                    <div style="color:rebeccapurple;">
+                      <label style="font-style:oblique;"><b>User Id: </b></label>
+                      <span>{{follower.id}}</span>
+                    </div>
+                    <div style="color:rebeccapurple;">
+                      <label style="font-style:oblique;"><b>URL:</b></label>
+                      <span> {{follower.url}}</span>
+                    </div>
+                    <div style="color:rebeccapurple;">
+                      <label style="font-style:oblique;"><b>Admin:</b></label>
+                      <span *ngIf="follower.site_admin == true">Yes</span>
+                      <span *ngIf="follower.site_admin == false">No</span>
+                    </div>
+                  </details>
+                </div>
+              </div>
             </div>
           </details>
         </div>

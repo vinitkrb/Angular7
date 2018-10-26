@@ -44,4 +44,14 @@ export class GithubUserComponent implements OnInit {
       alert("User not found.")
     }
   }
+
+  viewUser(user: User) {
+    this.selectedUser = user;
+    this.userService.getUserFollowers(user.login).subscribe(res => {
+      this.selectedUser.followers = res as User[];
+      console.log(res);
+    }, error => {
+      console.log(error);
+    });
+  }
 }
